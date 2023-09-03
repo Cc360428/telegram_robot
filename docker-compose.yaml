@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  telegram_robot:
+    image: telegramcc:tg_v1
+    container_name: telegram_robot
+    restart: always
+    environment:
+      TELEGRAM_APITOKEN: ""
+      https_proxy: 'http://172.12.12.189:10809'
+#      no_proxy: 'http://172.13.5.12,172.13.5.12,172.12.10.189,hall,gs,log-server,grpc.ferry,persistent.redis'
+networks:
+  default:
+    external:
+      name: cc
